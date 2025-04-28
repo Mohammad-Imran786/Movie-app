@@ -14,13 +14,13 @@ const MovieCard = ({ movie: { id, title, vote_average, poster_path } }) => {
         <div className="mt-4">
           <h3 className="text-white text-center text-sm font-semibold">{title}</h3>
           <div className="flex items-center justify-center gap-1 mt-2">
-            <img src="/star.svg" alt="Star Icon" className="w-4 h-4" />
+            <img src="Movie-app/star.svg" alt="Star Icon" className="w-4 h-4" />
             <p className="text-white text-sm">{vote_average ? vote_average.toFixed(1) : 'N/A'}</p>
           </div>
         </div>
       </div>
     </Link>
-  );
+  )
 };
 
 export default MovieCard;
