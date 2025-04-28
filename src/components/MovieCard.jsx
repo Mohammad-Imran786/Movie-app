@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movie: { id, title, vote_average, poster_path } }) => {
-  
+
   return (
     <Link to={`/movie/${id}`}>
       <div className="bg-gray-800 p-3 rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg">

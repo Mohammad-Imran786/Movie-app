@@ -1,15 +1,15 @@
 import React from 'react';
 import { useMyList } from '../contexts/MyListContext';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 const MyList = () => {
+
   const { myList, removeFromMyList } = useMyList();
 
   return (
     <div className="min-h-screen px-10 py-4 bg-black text-white">
       <Navbar />
-      <h1 className="text-3xl flex items-center justify-center font-bold mt-12 mb-8">🎬 My List</h1>
+      <h1 className="text-3xl flex items-center justify-center font-bold mt-12 mb-8 py-10 md:py-4">🎬 My List</h1>
 
       {myList.length === 0 ? (
         <p className="text-gray-400">No movies in your list yet.</p>
@@ -36,11 +36,8 @@ const MyList = () => {
           ))}
         </div>
       )}
-      <div>
-        <Footer />
-      </div>
     </div>
-  );
+  )
 };
 
 export default MyList;

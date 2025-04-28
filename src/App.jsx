@@ -3,19 +3,16 @@ import Home from './pages/Home';
 import MovieDetails from './pages/MovieDetails';
 import MyList from './pages/MyList';
 
-const App = () => {
-
-  return (
-    <Router>
-      <div className="min-h-screen bg-gray-900">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movie/:id" element={<MovieDetails />} />
-          <Route path="/mylist" element={<MyList />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <main className="min-h-screen bg-gray-900">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/mylist" element={<MyList />} />
+      </Routes>
+    </main>
+  </Router>
+);
 
 export default App;

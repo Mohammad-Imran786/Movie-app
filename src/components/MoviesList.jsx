@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import { fetchFromTMDB } from '../api/tmdb';
-import MovieCard from './MovieCard';
 import Spinner from './Spinner';
 import MovieSection from './MovieSection';
 
 const MoviesList = () => {
+
+  const [nowPlaying, setNowPlaying] = useState([]);
   const [popular, setPopular] = useState([]);
   const [topRated, setTopRated] = useState([]);
-  const [nowPlaying, setNowPlaying] = useState([]);
   const [upcoming, setUpcoming] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+
     const fetchMovies = async () => {
       try {
         const [popularData, topRatedData, nowPlayingData, upcomingData] = await Promise.all([
@@ -25,18 +26,20 @@ const MoviesList = () => {
         setPopular(popularData.results);
         setTopRated(topRatedData.results);
         setUpcoming(upcomingData.results);
-      } catch (error) {
+      } 
+      catch (error) {
         console.error('Error fetching movies:', error);
-      } finally {
+      } 
+      finally {
         setLoading(false);
       }
     };
 
     fetchMovies();
-  }, []);
+  }, [])
 
   if (loading) {
-    <div className="flex justify-center items-center h-screen text-white text-xl">
+    <div className="flex justify-center items-center h-screen">
         <Spinner />
     </div>
   }
@@ -48,7 +51,7 @@ const MoviesList = () => {
       <MovieSection title="Top Rated Movies" movies={topRated} />
       <MovieSection title="Upcoming Movies" movies={upcoming} />
     </div>
-  );
+  )
 };
 
 export default MoviesList;

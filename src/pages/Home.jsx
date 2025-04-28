@@ -1,17 +1,17 @@
-import React from 'react'
-import MoviesList from '../components/MoviesList'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import React from 'react';
+import MoviesList from '../components/MoviesList';
+import Footer from '../components/Footer';
+import Hero from '../components/Hero';
 
 const Home = () => {
+
   return (
     <div>
-      <Header />
+      <Hero />
       <MoviesList />
       <Footer />
     </div>
   )
-}
+};
 
-export default Home
+export default Home;
