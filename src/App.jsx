@@ -4,7 +4,7 @@ import MovieDetails from './pages/MovieDetails';
 import MyList from './pages/MyList';
 
 const App = () => (
-  <Router>
+  <Router basename="/Movie-app">
     <main className="min-h-screen bg-gray-900">
       <Routes>
         <Route path="/" element={<Home />} />
